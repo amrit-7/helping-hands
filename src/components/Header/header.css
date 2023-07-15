@@ -1,0 +1,43 @@
+.firstDiv {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../assets/garden.jpg");
+  background-size: cover;
+}
+.insideDiv {
+  z-index: 2;
+  background-color: white;
+  padding: 30px;
+  border-radius: 5px;
+}
+.inputContainer {
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  padding: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.searchInput {
+  width: 100%;
+  border: none;
+}
+.searchInput:focus {
+  outline: none;
+}
+.serviceTags {
+  border: 1px solid #0095ff;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 2px 5px;
+  font-size: 12px;
+  max-height: 25px;
+}
+.seeMore {
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
