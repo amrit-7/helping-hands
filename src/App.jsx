@@ -7,7 +7,7 @@ import Home from "./Pages/Home/Home";
 import Login from "./Pages/Authentication/authentication";
 import About from "./Pages/About/About";
 import ServicesRoutes from "./Pages/Services/ServicesRoutes";
-import Layout from "./components/Layout/layout";
+import Layout from "./components/Layout/Layout";
 import { PrivateRoutes } from "./privateRoute";
 
 function App() {
