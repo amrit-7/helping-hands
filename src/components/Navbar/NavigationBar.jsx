@@ -21,7 +21,7 @@ function NavigationBar() {
   const handleLogout = async () => {
     try {
       const res = await axios.post(
-        "https://e39a-2405-201-5000-82a0-154-687a-960b-8a9a.ngrok-free.app/logout",
+        "https://9714-2405-201-5000-82a0-154-687a-960b-8a9a.ngrok-free.app/logout",
         {},
         {
           headers: {

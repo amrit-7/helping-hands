@@ -37,13 +37,10 @@ const RegisterForm = ({ setRegister }) => {
   const handleFormSubmit = async () => {
     try {
       const res = await axios.post(
-        "https://e39a-2405-201-5000-82a0-154-687a-960b-8a9a.ngrok-free.app/signup",
+        "https://9714-2405-201-5000-82a0-154-687a-960b-8a9a.ngrok-free.app/signup",
         values
       );
-      console.log(
-        "🚀 ~ file: RegisterForm.jsx:40 ~ handleFormSubmit ~ res:",
-        res
-      );
+
       if (res.status === 200) {
         toast.success("Wohoo! Sign up Successfull 🎉");
         dispatch(setCurrentUser(res.data));

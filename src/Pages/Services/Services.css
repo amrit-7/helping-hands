@@ -96,23 +96,28 @@
 .cardser:hover .overlay::after {
   transform: translate(-50%, -50%) scale(2);
 }
+
 .textChanging {
   color: #51005a80;
   font-size: 20px;
   font-weight: 500;
 }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+
+.phoneInput::-webkit-outer-spin-button,
+.phoneInput::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 .profileContainer {
   position: relative;
 }
+
 .profileContainer img {
   position: relative;
   box-shadow: 5px 5px 10px lightgrey;
 }
+
 .profileContainer .cameraIcon {
   position: absolute;
   bottom: 0;
@@ -121,6 +126,7 @@ input::-webkit-inner-spin-button {
   padding: 6px;
   border-radius: 50%;
 }
+
 .selectDiv {
   border: 1px solid lightgrey;
   border-radius: 7px;
@@ -131,10 +137,12 @@ input::-webkit-inner-spin-button {
   outline: none !important;
   border: none !important;
 }
+
 .serviceSelect:focus {
   box-shadow: none !important;
   border: none !important;
 }
+
 .selectedServices {
   width: fit-content;
   background-color: lightgrey;

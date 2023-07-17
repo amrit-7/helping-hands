@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { BsFillCameraFill } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 import Defaultpfp from "../../../assets/Default_pfp.svg.png";
 import "../Services.css";
 
@@ -21,8 +22,8 @@ export const convertBase64 = (file) => {
     };
   });
 };
-
 const ServiceProvider = () => {
+  const navigate = useNavigate();
   const [profile, setProfile] = useState(Defaultpfp);
   const [file, setFile] = useState();
   const [services, setServices] = useState([]);
@@ -72,7 +73,6 @@ const ServiceProvider = () => {
   };
   const handleSubmitForm = async (e) => {
     e.preventDefault();
-
     e.preventDefault();
     if (services.length <= 0) {
       return toast.error("Please select services");
@@ -84,7 +84,7 @@ const ServiceProvider = () => {
       formData.append("services[]", services[i]);
     }
     const res = await axios.post(
-      "https://e39a-2405-201-5000-82a0-154-687a-960b-8a9a.ngrok-free.app/add_services",
+      "https://9714-2405-201-5000-82a0-154-687a-960b-8a9a.ngrok-free.app/add_services",
       formData,
       {
         headers: {
@@ -92,10 +92,13 @@ const ServiceProvider = () => {
         },
       }
     );
-    console.log(
-      "🚀 ~ file: ServiceProvider.jsx:93 ~ handleSubmitForm ~ res:",
-      res
-    );
+
+    if (res.status === 200) {
+      toast.success("Details Saved");
+      navigate("/services/rates");
+    } else {
+      toast.error("Error while saving details");
+    }
   };
 
   const containerVariant = {
