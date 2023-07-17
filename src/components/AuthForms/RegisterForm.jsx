@@ -37,7 +37,7 @@ const RegisterForm = ({ setRegister }) => {
   const handleFormSubmit = async () => {
     try {
       const res = await axios.post(
-        "https://41bc-2405-201-5000-82a0-cc57-19a5-a9d8-4b18.ngrok-free.app/signup",
+        "https://e39a-2405-201-5000-82a0-154-687a-960b-8a9a.ngrok-free.app/signup",
         values
       );
       console.log(

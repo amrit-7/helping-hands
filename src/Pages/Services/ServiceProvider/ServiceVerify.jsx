@@ -29,7 +29,7 @@ const ServiceVerify = () => {
   const handleFormSubmit = async (e) => {
     const token = captchaRef.current.getValue();
     const res = await axios.post(
-      "https://41bc-2405-201-5000-82a0-cc57-19a5-a9d8-4b18.ngrok-free.app/verify",
+      "https://e39a-2405-201-5000-82a0-154-687a-960b-8a9a.ngrok-free.app/verify",
       values,
       {
         headers: {

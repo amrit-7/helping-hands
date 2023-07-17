@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router";
 import { Slide, ToastContainer } from "react-toastify";
-
 import "react-toastify/dist/ReactToastify.css";
 import { FaviconLoop } from "./FaviconLoop";
 import Home from "./Pages/Home/Home";
