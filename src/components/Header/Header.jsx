@@ -48,11 +48,11 @@ function Header() {
             </Form>
             <BsSearch className="me-2" style={{ cursor: "pointer" }} />
           </div>
-          <div className="d-flex align-items-center mt-3">
+          <div className="d-flex align-items-center justify-content-around mt-3 flex-wrap">
             {serviceOptions.map((option, ind) => {
               const { name } = option;
               return (
-                <div className="me-3 serviceTags" key={ind}>
+                <div className="mb-2 serviceTags" key={ind}>
                   <motion.span
                     whileHover={{ scale: 500, originX: 0, color: "#0095ff" }}
                   >
