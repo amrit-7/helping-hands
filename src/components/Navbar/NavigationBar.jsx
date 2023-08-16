@@ -7,11 +7,11 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
-import "./navbar.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { setCurrentUser } from "../../store/store";
+import { baseAPI } from "../../../api";
+import "./navbar.css";
 
 function NavigationBar() {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ function NavigationBar() {
   const handleLogout = async () => {
     try {
       const res = await axios.post(
-        "https://9714-2405-201-5000-82a0-154-687a-960b-8a9a.ngrok-free.app/logout",
+        `${baseAPI}/logout`,
         {},
         {
           headers: {

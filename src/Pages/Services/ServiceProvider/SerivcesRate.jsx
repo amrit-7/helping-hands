@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { baseAPI } from "../../../../api";
 
 const SerivcesRate = () => {
   const currentUser = useSelector((state) => {
@@ -10,7 +11,7 @@ const SerivcesRate = () => {
   useEffect(() => {
     const getServiceRates = async () => {
       const res = await axios.post(
-        "https://9714-2405-201-5000-82a0-154-687a-960b-8a9a.ngrok-free.app/add_prices",
+        `${baseAPI}/add_prices`,
         {},
         {
           headers: {

@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { loginSchema } from "../../Pages/Authentication/authSchema";
 import { setCurrentUser } from "../../store/store";
+import { baseAPI } from "../../../api";
 const LoginForm = ({ setRegister }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -36,10 +37,7 @@ const LoginForm = ({ setRegister }) => {
 
   const handleFormSubmit = async () => {
     try {
-      const res = await axios.post(
-        "https://9714-2405-201-5000-82a0-154-687a-960b-8a9a.ngrok-free.app/login",
-        values
-      );
+      const res = await axios.post(`${baseAPI}/login`, values);
       console.log("🚀 ~ file: LoginForm.jsx:40 ~ handleFormSubmit ~ res:", res);
       if (res.status === 200) {
         toast.success("Login Successfull 🎉");

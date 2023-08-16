@@ -6,6 +6,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { setCurrentUser } from "../../store/store";
+import { baseAPI } from "../../../api";
 const RegisterForm = ({ setRegister }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -36,10 +37,7 @@ const RegisterForm = ({ setRegister }) => {
     });
   const handleFormSubmit = async () => {
     try {
-      const res = await axios.post(
-        "https://9714-2405-201-5000-82a0-154-687a-960b-8a9a.ngrok-free.app/signup",
-        values
-      );
+      const res = await axios.post(`${baseAPI}/signup`, values);
 
       if (res.status === 200) {
         toast.success("Wohoo! Sign up Successfull 🎉");

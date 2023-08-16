@@ -8,6 +8,7 @@ import { MdClose } from "react-icons/md";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import Defaultpfp from "../../../assets/Default_pfp.svg.png";
+import { baseAPI } from "../../../../api";
 import "../Services.css";
 
 export const convertBase64 = (file) => {
@@ -73,7 +74,6 @@ const ServiceProvider = () => {
   };
   const handleSubmitForm = async (e) => {
     e.preventDefault();
-    e.preventDefault();
     if (services.length <= 0) {
       return toast.error("Please select services");
     }
@@ -83,15 +83,11 @@ const ServiceProvider = () => {
     for (var i = 0; i < services.length; i++) {
       formData.append("services[]", services[i]);
     }
-    const res = await axios.post(
-      "https://9714-2405-201-5000-82a0-154-687a-960b-8a9a.ngrok-free.app/add_services",
-      formData,
-      {
-        headers: {
-          Authorization: `Bearer ${currentUser && currentUser.token}`,
-        },
-      }
-    );
+    const res = await axios.post(`${baseAPI}/add_services`, formData, {
+      headers: {
+        Authorization: `Bearer ${currentUser && currentUser.token}`,
+      },
+    });
 
     if (res.status === 200) {
       toast.success("Details Saved");

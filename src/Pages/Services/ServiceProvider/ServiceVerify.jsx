@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 import Loader from "../../../components/Loader/Loader";
 import VerifyForm from "../../../components/AuthForms/VerifyForm";
+import { baseAPI } from "../../../../api";
 const ServiceVerify = () => {
   const navigate = useNavigate();
   const currentUser = useSelector((state) => {
@@ -14,7 +15,7 @@ const ServiceVerify = () => {
     const getDetails = async () => {
       setIsLoading(true);
       const res = await axios.post(
-        "https://9714-2405-201-5000-82a0-154-687a-960b-8a9a.ngrok-free.app/get_details",
+        `${baseAPI}/get_details`,
         {},
         {
           headers: {

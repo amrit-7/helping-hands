@@ -4,11 +4,11 @@ import { useRef, useState } from "react";
 import { Col, Container, FormControl, FormLabel } from "react-bootstrap";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useSelector } from "react-redux";
+import { useFormik } from "formik";
 import { useNavigate } from "react-router";
 import { verifySchema } from "../../Pages/Authentication/authSchema";
 import AuthSvg from "../../assets/AuthSvg";
-import { useFormik } from "formik";
-
+import { baseAPI } from "../../../api";
 const VerifyForm = () => {
   const navigate = useNavigate();
   const [valid_token, setValidToken] = useState("");
@@ -29,15 +29,11 @@ const VerifyForm = () => {
     });
   const handleFormSubmit = async (e) => {
     const token = captchaRef.current.getValue();
-    const res = await axios.post(
-      "https://9714-2405-201-5000-82a0-154-687a-960b-8a9a.ngrok-free.app/verify",
-      values,
-      {
-        headers: {
-          Authorization: `Bearer ${currentUser && currentUser.token}`,
-        },
-      }
-    );
+    const res = await axios.post(`${baseAPI}/verify`, values, {
+      headers: {
+        Authorization: `Bearer ${currentUser && currentUser.token}`,
+      },
+    });
     captchaRef.current.reset();
     navigate("/services/provide");
   };
